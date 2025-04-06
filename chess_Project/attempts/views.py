@@ -15,7 +15,7 @@ class AttemptList(generics.ListAPIView):
 
 class CreateAttempt(generics.CreateAPIView):
     serializer_class = CreateAttemptSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

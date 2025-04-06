@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 class PuzzleList(generics.ListAPIView):
     queryset = Puzzle.objects.all()
     serializer_class = PuzzleSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
 class PuzzleDetail(generics.RetrieveAPIView):
     queryset = Puzzle.objects.all()
@@ -26,3 +26,10 @@ class RandomPuzzle(generics.RetrieveAPIView):
         if difficulty:
             return Puzzle.objects.filter(difficulty=difficulty).order_by('?').first()
         return Puzzle.objects.order_by('?').first()
+
+
+
+def puzzle_list(request):
+    puzzles = Puzzle.objects.all()
+    return render(request, 'puzzles/puzzle_list.html', {'puzzles': puzzles})
+

@@ -14,7 +14,8 @@ class Puzzle(models.Model):
         (ADVANCED, 'Advanced'),
         (EXPERT, 'Expert'),
     ]
-    
+    title = models.CharField(max_length=255)
+    description = models.TextField()
     fen = models.CharField(max_length=100)
     moves = models.JSONField()
     difficulty = models.IntegerField(choices=DIFFICULTY_CHOICES)
