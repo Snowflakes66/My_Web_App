@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Profile</h1>
+  <p>Puzzles Solved: {{ progress.puzzles_solved }}</p>
+  <p>Puzzles Attempted: {{ progress.puzzles_attempted }}</p>
+  <p>Accuracy: {{ progress.accuracy }}%</p>
+{% endblock %}
+
