@@ -1,4 +1,4 @@
-#Project Name: Chess Web App
+# Chess Web App
 
 A web application for playing and solving chess puzzles.
 
